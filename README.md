@@ -2,4 +2,4 @@
 
 Author: Zhenlong Zhang
 
-[Link to the deployed website]() 
+[Link to the deployed website](https://zzl-0824.github.io/biostat777-intro-zhenlong-zhang/) 
