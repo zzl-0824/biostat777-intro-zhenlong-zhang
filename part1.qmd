@@ -2,5 +2,7 @@
 title: "Brand Reflection"
 ---
 
-# Brand Reflection
+When I think about my brand as a scientist, I focus on making my work unique and useful. I’m passionate about mental health research, especially using tools like reinforcement learning and large language models to dig into decision-making and how people adapt strategies over time. This isn’t just a personal interest—it connects to a bigger goal: using insights from computational models to improve mental health interventions. I hope that by sharing my findings in ways people can understand, my research can make an impact not only in academia but also in policy and practice.
+
+My audience isn’t just mental health and public health researchers; I’m also hoping to reach people interested in how cognitive science can actually shape policy. In the future, I’d love to be known as someone who brings advanced approaches to studying decision-making and mental health. Over the next few years, I’m aiming to lead projects focused on understanding decision-making in addiction, especially for underrepresented groups. Plus, I hope to dive deeper into reinforcement learning models to get an even better grasp on decision-making patterns.
 
