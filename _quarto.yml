@@ -12,7 +12,7 @@ website:
         text: About
       - href: example-analysis.qmd
         text: Example Analysis
-        href: part1.qmd
+      - href: part1.qmd
         text: Brand Reflection
       - href: part3.qmd
         text: Command Line Exercises
