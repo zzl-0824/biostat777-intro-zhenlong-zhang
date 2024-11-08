@@ -21,6 +21,34 @@
     "text": "When I think about my brand as a scientist, I focus on making my work unique and useful. I’m passionate about mental health research, especially using tools like reinforcement learning and large language models to dig into decision-making and how people adapt strategies over time. This isn’t just a personal interest—it connects to a bigger goal: using insights from computational models to improve mental health interventions. I hope that by sharing my findings in ways people can understand, my research can make an impact not only in academia but also in policy and practice.\nMy audience isn’t just mental health and public health researchers; I’m also hoping to reach people interested in how cognitive science can actually shape policy. In the future, I’d love to be known as someone who brings advanced approaches to studying decision-making and mental health. Over the next few years, I’m aiming to lead projects focused on understanding decision-making in addiction, especially for underrepresented groups. Plus, I hope to dive deeper into reinforcement learning models to get an even better grasp on decision-making patterns."
   },
   {
+    "objectID": "example-analysis.html",
+    "href": "example-analysis.html",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "In California, how has per capita investment in drinking water systems changed over time, and how does it relate to city population size?"
+  },
+  {
+    "objectID": "example-analysis.html#graph-1-average-water-utility-investment-per-capita-in-ca-2012-vs-2017",
+    "href": "example-analysis.html#graph-1-average-water-utility-investment-per-capita-in-ca-2012-vs-2017",
+    "title": "Example Analysis",
+    "section": "Graph 1: Average Water Utility Investment per Capita in CA (2012 vs 2017)",
+    "text": "Graph 1: Average Water Utility Investment per Capita in CA (2012 vs 2017)\n(2.pdf)"
+  },
+  {
+    "objectID": "example-analysis.html#graph-2-distribution-of-per-capita-water-utility-investment-in-california-2012-vs-2017",
+    "href": "example-analysis.html#graph-2-distribution-of-per-capita-water-utility-investment-in-california-2012-vs-2017",
+    "title": "Example Analysis",
+    "section": "Graph 2: Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)",
+    "text": "Graph 2: Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)\n(3.pdf)"
+  },
+  {
+    "objectID": "example-analysis.html#graph-3-relationship-in-population-and-per-capita-investment-in-ca-2012-vs-2017",
+    "href": "example-analysis.html#graph-3-relationship-in-population-and-per-capita-investment-in-ca-2012-vs-2017",
+    "title": "Example Analysis",
+    "section": "Graph 3: Relationship in Population and Per Capita Investment in CA (2012 vs 2017)",
+    "text": "Graph 3: Relationship in Population and Per Capita Investment in CA (2012 vs 2017)\n(4.pdf)"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home",

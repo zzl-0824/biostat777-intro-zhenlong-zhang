@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -118,8 +138,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link active" data-scroll-target="#research-question">Research Question</a></li>
+  <li><a href="#intended-audience" id="toc-intended-audience" class="nav-link" data-scroll-target="#intended-audience">Intended Audience</a></li>
+  <li><a href="#data-source-and-dictionary" id="toc-data-source-and-dictionary" class="nav-link" data-scroll-target="#data-source-and-dictionary">Data Source and Dictionary</a></li>
+  <li><a href="#data-dictionary-excerpt" id="toc-data-dictionary-excerpt" class="nav-link" data-scroll-target="#data-dictionary-excerpt">Data Dictionary (excerpt):</a></li>
+  <li><a href="#conclusionanalysis" id="toc-conclusionanalysis" class="nav-link" data-scroll-target="#conclusionanalysis">Conclusion(analysis)</a></li>
+  <li><a href="#graphsanalysis" id="toc-graphsanalysis" class="nav-link" data-scroll-target="#graphsanalysis">Graphs(analysis)</a></li>
+  <li><a href="#external-image-water-distribution-system-example" id="toc-external-image-water-distribution-system-example" class="nav-link" data-scroll-target="#external-image-water-distribution-system-example">External Image: Water Distribution System (Example)</a></li>
+  <li><a href="#code-for-data-wrangling-and-visualization" id="toc-code-for-data-wrangling-and-visualization" class="nav-link" data-scroll-target="#code-for-data-wrangling-and-visualization">Code for Data Wrangling and Visualization</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -143,10 +176,105 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="research-question" class="level1">
+<h1>Research Question</h1>
+<pre><code>In California, how has per capita investment in drinking water systems changed over time, and how does it relate to city population size?</code></pre>
+</section>
+<section id="intended-audience" class="level1">
+<h1>Intended Audience</h1>
+<pre><code>The intended audience for this analysis includes policymakers, environmental scientists, and local government officials interested in tracking public infrastructure investments in California. Insights from this analysis could help assess whether public funding for essential services has grown to meet population needs.</code></pre>
+</section>
+<section id="data-source-and-dictionary" class="level1">
+<h1>Data Source and Dictionary</h1>
+<pre><code>The data used in this analysis is sourced from the Municipal Drinking Water Database, 2000-2018, hosted on Harvard Dataverse. This dataset includes information on U.S. cities' financial, institutional, and demographic conditions related to their community water systems, offering a comprehensive look into the financial stress and public health infrastructure available to support local communities [@mdwd_data].</code></pre>
+<p>Studies such as those by Shamsub and Akoto (2004) have shown how fiscal structures can impact financial stress at the local government level, affecting decisions on resource allocation <span class="citation" data-cites="shamsub2004">(<a href="#ref-shamsub2004" role="doc-biblioref">Shamsub and Akoto 2004</a>)</span>. Additionally, Jimenez (2009) discusses the complexities of fiscal stress and its impact on state and local expenditure responsibilities, which is relevant for understanding spending patterns in public utilities like water systems in California <span class="citation" data-cites="jimenez2009">(<a href="#ref-jimenez2009" role="doc-biblioref">Jimenez 2009</a>)</span>.</p>
+<pre><code>Link: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DFB6NG</code></pre>
+</section>
+<section id="data-dictionary-excerpt" class="level1">
+<h1>Data Dictionary (excerpt):</h1>
+<pre><code>YEAR: The year of observation.
+Census.Name: City name in California.
+State: The state of California (filtered).
+Water_Utility_Revenue: The total revenue from the water utility.
+Water_Util_Total_Exp: The total expenditure for the water utility.
+TOT_POP: Population of the city.</code></pre>
+</section>
+<section id="conclusionanalysis" class="level1">
+<h1>Conclusion(analysis)</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Summary</strong></p>
+<p>The analysis highlights that per capita investment in drinking water systems in California has varied between 2012 and 2017. Population size appears to correlate with per capita investment, with smaller cities generally exhibiting higher per capita investments. This trend may reflect the diverse needs and resource allocations in cities of different sizes across California.</p>
+</div>
+</div>
+<div class="margin">
+<p><strong>Insight</strong>: Smaller cities in California often exhibit higher per capita water utility investments, which may reflect tailored resource allocation for smaller populations.</p>
+</div>
+<div class="margin">
+<p><strong>Note</strong>: This analysis only includes data from 2012 and 2017 due to data availability for revenue and expenditures.</p>
+</div>
+</section>
+<section id="graphsanalysis" class="level1">
+<h1>Graphs(analysis)</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Graphs</strong> The graphs below illustrate the variation in per capita water utility investment across cities in California in 2012 and 2017.</p>
+<section id="graph-1-average-water-utility-investment-per-capita-in-ca-2012-vs-2017" class="level2">
+<h2 class="anchored" data-anchor-id="graph-1-average-water-utility-investment-per-capita-in-ca-2012-vs-2017">Graph 1: Average Water Utility Investment per Capita in CA (2012 vs 2017)</h2>
+<p>(2.pdf)</p>
+</section>
+<section id="graph-2-distribution-of-per-capita-water-utility-investment-in-california-2012-vs-2017" class="level2">
+<h2 class="anchored" data-anchor-id="graph-2-distribution-of-per-capita-water-utility-investment-in-california-2012-vs-2017">Graph 2: Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)</h2>
+<p>(3.pdf)</p>
+</section>
+<section id="graph-3-relationship-in-population-and-per-capita-investment-in-ca-2012-vs-2017" class="level2">
+<h2 class="anchored" data-anchor-id="graph-3-relationship-in-population-and-per-capita-investment-in-ca-2012-vs-2017">Graph 3: Relationship in Population and Per Capita Investment in CA (2012 vs 2017)</h2>
+<p>(4.pdf)</p>
+</section>
+</div>
+</div>
+</section>
+<section id="external-image-water-distribution-system-example" class="level1">
+<h1>External Image: Water Distribution System (Example)</h1>
+<p>(5.jpg)</p>
+</section>
+<section id="code-for-data-wrangling-and-visualization" class="level1">
+<h1>Code for Data Wrangling and Visualization</h1>
+<pre><code>library(readr)</code></pre>
+<p>MDWD &lt;- read_csv(“Downloads/MDWD.csv”) library(dplyr) library(tidyr) library(ggplot2) mdwd_1 &lt;- MDWD %&gt;% filter(YEAR %in% c(2017, 2012) &amp; State == “CA”) mdwd_2 &lt;- mdwd_1 %&gt;% select(YEAR, State, Census.Name, Water_Utility_Revenue, Water_Util_Total_Exp, TOT_POP) mdwd_transformed &lt;- mdwd_2 %&gt;% mutate(investment_per_capita = Water_Utility_Revenue / TOT_POP) print(mdwd_transformed)</p>
+<p>groupyear &lt;- mdwd_transformed %&gt;% group_by(YEAR) %&gt;% summarize(avg_investment_per_capita = mean(investment_per_capita, na.rm = TRUE))</p>
+<p>ggplot(groupyear, aes(x = factor(YEAR), y = avg_investment_per_capita)) + geom_bar(stat = “identity”, fill = “skyblue”) + labs( title = “Average Water Utility Investment per Capita in CA (2012 vs 2017)”, x = “Year”, y = “Average Investment per Capita ($)” ) + theme_minimal()</p>
+<p>ggplot(mdwd_transformed, aes(x = factor(YEAR), y = investment_per_capita, fill = factor(YEAR))) + geom_boxplot() + labs( title = “Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)”, subtitle = “Comparing the range and median of investment per capita in CA cities”, x = “Year”, y = “Investment per Capita ($)” ) + theme_minimal() + theme(legend.position = “none”)</p>
+<p>ggplot(mdwd_transformed, aes(x = TOT_POP, y = investment_per_capita, color = Census.Name)) + geom_point(alpha = 0.5) + geom_smooth(method = “lm”, se = FALSE) + facet_wrap(~ YEAR) + labs( title = “Relationship in Population and Per Capita Investment in CA (2012 vs 2017)”, x = “Population”, y = “Investment per Capita ($)” ) + theme_minimal() + theme(legend.position = “none”)</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-jimenez2009" class="csl-entry" role="listitem">
+Jimenez, B. S. 2009. <span>“Fiscal Stress and the Allocation of Expenditure Responsibilities Between State and Local Governments: An Exploratory Study.”</span> <em>State and Local Government Review</em> 41 (2): 81–94. <a href="https://doi.org/10.1177/0160323X0904100202">https://doi.org/10.1177/0160323X0904100202</a>.
+</div>
+<div id="ref-shamsub2004" class="csl-entry" role="listitem">
+Shamsub, Hannarong, and Joseph B. Akoto. 2004. <span>“<a href="">State and Local Fiscal Structures and Fiscal Stress</a>.”</span> <em>Journal of Public Budgeting, Accounting &amp; Financial Management</em>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

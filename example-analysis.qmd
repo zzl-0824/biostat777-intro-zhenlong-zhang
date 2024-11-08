@@ -1,3 +1,116 @@
 ---
 title: "Example Analysis"
+bibliography: references.bib
 ---
+# Research Question
+
+    In California, how has per capita investment in drinking water systems changed over time, and how does it relate to city population size?
+
+# Intended Audience
+
+    The intended audience for this analysis includes policymakers, environmental scientists, and local government officials interested in tracking public infrastructure investments in California. Insights from this analysis could help assess whether public funding for essential services has grown to meet population needs.
+    
+# Data Source and Dictionary
+
+    The data used in this analysis is sourced from the Municipal Drinking Water Database, 2000-2018, hosted on Harvard Dataverse. This dataset includes information on U.S. cities' financial, institutional, and demographic conditions related to their community water systems, offering a comprehensive look into the financial stress and public health infrastructure available to support local communities [@mdwd_data].
+
+  Studies such as those by Shamsub and Akoto (2004) have shown how fiscal structures can impact financial stress at the local government level, affecting decisions on resource allocation [@shamsub2004]. Additionally, Jimenez (2009) discusses the complexities of fiscal stress and its impact on state and local expenditure responsibilities, which is relevant for understanding spending patterns in public utilities like water systems in California [@jimenez2009].
+
+    Link: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DFB6NG
+
+# Data Dictionary (excerpt):
+
+    YEAR: The year of observation.
+    Census.Name: City name in California.
+    State: The state of California (filtered).
+    Water_Utility_Revenue: The total revenue from the water utility.
+    Water_Util_Total_Exp: The total expenditure for the water utility.
+    TOT_POP: Population of the city.
+
+# Conclusion(analysis)
+
+::: {.callout-note}
+**Summary**
+
+The analysis highlights that per capita investment in drinking water systems in California has varied between 2012 and 2017. Population size appears to correlate with per capita investment, with smaller cities generally exhibiting higher per capita investments. This trend may reflect the diverse needs and resource allocations in cities of different sizes across California.
+
+:::
+
+::: {.margin}
+**Insight**: Smaller cities in California often exhibit higher per capita water utility investments, which may reflect tailored resource allocation for smaller populations.
+:::
+
+::: {.margin}
+**Note**: This analysis only includes data from 2012 and 2017 due to data availability for revenue and expenditures.
+:::
+
+# Graphs(analysis)
+
+::: {.callout-note}
+**Graphs**
+The graphs below illustrate the variation in per capita water utility investment across cities in California in 2012 and 2017.
+
+## Graph 1: Average Water Utility Investment per Capita in CA (2012 vs 2017)
+(2.pdf) 
+
+## Graph 2: Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)
+(3.pdf) 
+
+## Graph 3: Relationship in Population and Per Capita Investment in CA (2012 vs 2017)
+(4.pdf) 
+:::
+
+# External Image: Water Distribution System (Example)
+
+(5.jpg) 
+
+# Code for Data Wrangling and Visualization
+
+    library(readr)
+MDWD <- read_csv("Downloads/MDWD.csv")
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+mdwd_1 <- MDWD %>%
+  filter(YEAR %in% c(2017, 2012) & State == "CA")
+mdwd_2 <- mdwd_1 %>%
+  select(YEAR, State, Census.Name, Water_Utility_Revenue, Water_Util_Total_Exp, TOT_POP)
+mdwd_transformed <- mdwd_2 %>%
+  mutate(investment_per_capita = Water_Utility_Revenue / TOT_POP)
+print(mdwd_transformed)
+
+groupyear <- mdwd_transformed %>%
+  group_by(YEAR) %>%
+  summarize(avg_investment_per_capita = mean(investment_per_capita, na.rm = TRUE))
+
+ggplot(groupyear, aes(x = factor(YEAR), y = avg_investment_per_capita)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(
+    title = "Average Water Utility Investment per Capita in CA (2012 vs 2017)",
+    x = "Year",
+    y = "Average Investment per Capita ($)"
+  ) +
+  theme_minimal()
+
+ggplot(mdwd_transformed, aes(x = factor(YEAR), y = investment_per_capita, fill = factor(YEAR))) +
+  geom_boxplot() + 
+  labs(
+    title = "Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)",
+    subtitle = "Comparing the range and median of investment per capita in CA cities",
+    x = "Year",
+    y = "Investment per Capita ($)"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+ggplot(mdwd_transformed, aes(x = TOT_POP, y = investment_per_capita, color = Census.Name)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~ YEAR) + 
+  labs(
+    title = "Relationship in Population and Per Capita Investment in CA (2012 vs 2017)",
+    x = "Population",
+    y = "Investment per Capita ($)"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
