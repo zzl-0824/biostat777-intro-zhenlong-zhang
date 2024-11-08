@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+## About Me
+
+I am passionate about studying cognitive processes and decision-making. I have extensive experience in computational modeling, including reinforcement learning and machine learning, and have contributed to projects involving language models to predict task performance based on strategy articulation. I am also proficient in programming with Python and R, and fluent in Mandarin and English. My practical experience includes mentoring underrepresented teens and supporting individuals with disabilities in understanding their unique needs.

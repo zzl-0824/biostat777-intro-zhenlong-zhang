@@ -1,0 +1,9 @@
+---
+title: "Home"
+---
+
+# Zhenlong Zhang
+
+Hello! I'm a graduate student in Mental Health at Johns Hopkins University, and my research interest is using Reinforcement Learning or Large Language Models to understand decision making. The photo attached is my student ID.
+
+![Student ID](1.jpg) 

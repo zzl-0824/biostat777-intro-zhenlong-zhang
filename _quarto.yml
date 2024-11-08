@@ -1,0 +1,21 @@
+project:
+  type: website
+  title: "biostat777-intro-zhenlong-zhang"
+
+website:
+  title: "Zhenlong Zhang's Website"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: example-analysis.qmd
+        text: Example Analysis
+
+format:
+  html:
+    theme: cosmo  
+    toc: true    
+
+editor: visual
