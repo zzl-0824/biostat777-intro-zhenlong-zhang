@@ -186,9 +186,9 @@ div.csl-indent {
 </section>
 <section id="data-source-and-dictionary" class="level1">
 <h1>Data Source and Dictionary</h1>
-<pre><code>The data used in this analysis is sourced from the Municipal Drinking Water Database, 2000-2018, hosted on Harvard Dataverse. This dataset includes information on U.S. cities' financial, institutional, and demographic conditions related to their community water systems, offering a comprehensive look into the financial stress and public health infrastructure available to support local communities [@mdwd_data].</code></pre>
+<p>The data used in this analysis is sourced from the Municipal Drinking Water Database, 2000-2018, hosted on Harvard Dataverse. This dataset includes information on U.S. cities’ financial, institutional, and demographic conditions related to their community water systems, offering a comprehensive look into the financial stress and public health infrastructure available to support local communities <span class="citation" data-cites="mdwd_data">(<a href="#ref-mdwd_data" role="doc-biblioref">Hughes et al. 2023</a>)</span>.</p>
 <p>Studies such as those by Shamsub and Akoto (2004) have shown how fiscal structures can impact financial stress at the local government level, affecting decisions on resource allocation <span class="citation" data-cites="shamsub2004">(<a href="#ref-shamsub2004" role="doc-biblioref">Shamsub and Akoto 2004</a>)</span>. Additionally, Jimenez (2009) discusses the complexities of fiscal stress and its impact on state and local expenditure responsibilities, which is relevant for understanding spending patterns in public utilities like water systems in California <span class="citation" data-cites="jimenez2009">(<a href="#ref-jimenez2009" role="doc-biblioref">Jimenez 2009</a>)</span>.</p>
-<pre><code>Link: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DFB6NG</code></pre>
+<pre><code>Link: [https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DFB6NG](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DFB6NG)</code></pre>
 </section>
 <section id="data-dictionary-excerpt" class="level1">
 <h1>Data Dictionary (excerpt):</h1>
@@ -237,27 +237,49 @@ Note
 <p><strong>Graphs</strong> The graphs below illustrate the variation in per capita water utility investment across cities in California in 2012 and 2017.</p>
 <section id="graph-1-average-water-utility-investment-per-capita-in-ca-2012-vs-2017" class="level2">
 <h2 class="anchored" data-anchor-id="graph-1-average-water-utility-investment-per-capita-in-ca-2012-vs-2017">Graph 1: Average Water Utility Investment per Capita in CA (2012 vs 2017)</h2>
-<p>(2.pdf)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="2.pdf" class="img-fluid"></p>
+<figcaption>Graph 1: Average Water Utility Investment per Capita in CA (2012 vs 2017)</figcaption>
+</figure>
+</div>
 </section>
 <section id="graph-2-distribution-of-per-capita-water-utility-investment-in-california-2012-vs-2017" class="level2">
 <h2 class="anchored" data-anchor-id="graph-2-distribution-of-per-capita-water-utility-investment-in-california-2012-vs-2017">Graph 2: Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)</h2>
-<p>(3.pdf)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="3.pdf" class="img-fluid"></p>
+<figcaption>Graph 2: Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)</figcaption>
+</figure>
+</div>
 </section>
 <section id="graph-3-relationship-in-population-and-per-capita-investment-in-ca-2012-vs-2017" class="level2">
 <h2 class="anchored" data-anchor-id="graph-3-relationship-in-population-and-per-capita-investment-in-ca-2012-vs-2017">Graph 3: Relationship in Population and Per Capita Investment in CA (2012 vs 2017)</h2>
-<p>(4.pdf)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="4.pdf" class="img-fluid"></p>
+<figcaption>Graph 3: Relationship in Population and Per Capita Investment in CA (2012 vs 2017)</figcaption>
+</figure>
+</div>
 </section>
 </div>
 </div>
 </section>
 <section id="external-image-water-distribution-system-example" class="level1">
 <h1>External Image: Water Distribution System (Example)</h1>
-<p>(5.jpg)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="5.jpg" class="img-fluid figure-img"></p>
+<figcaption>External Image: Water Distribution System</figcaption>
+</figure>
+</div>
 </section>
 <section id="code-for-data-wrangling-and-visualization" class="level1">
 <h1>Code for Data Wrangling and Visualization</h1>
-<pre><code>library(readr)</code></pre>
-<p>MDWD &lt;- read_csv(“Downloads/MDWD.csv”) library(dplyr) library(tidyr) library(ggplot2) mdwd_1 &lt;- MDWD %&gt;% filter(YEAR %in% c(2017, 2012) &amp; State == “CA”) mdwd_2 &lt;- mdwd_1 %&gt;% select(YEAR, State, Census.Name, Water_Utility_Revenue, Water_Util_Total_Exp, TOT_POP) mdwd_transformed &lt;- mdwd_2 %&gt;% mutate(investment_per_capita = Water_Utility_Revenue / TOT_POP) print(mdwd_transformed)</p>
+<p>library(readr) MDWD &lt;- read_csv(“Downloads/MDWD.csv”) library(dplyr) library(tidyr) library(ggplot2)</p>
+<p>mdwd_1 &lt;- MDWD %&gt;% filter(YEAR %in% c(2017, 2012) &amp; State == “CA”)</p>
+<p>mdwd_2 &lt;- mdwd_1 %&gt;% select(YEAR, State, Census.Name, Water_Utility_Revenue, Water_Util_Total_Exp, TOT_POP)</p>
+<p>mdwd_transformed &lt;- mdwd_2 %&gt;% mutate(investment_per_capita = Water_Utility_Revenue / TOT_POP)</p>
 <p>groupyear &lt;- mdwd_transformed %&gt;% group_by(YEAR) %&gt;% summarize(avg_investment_per_capita = mean(investment_per_capita, na.rm = TRUE))</p>
 <p>ggplot(groupyear, aes(x = factor(YEAR), y = avg_investment_per_capita)) + geom_bar(stat = “identity”, fill = “skyblue”) + labs( title = “Average Water Utility Investment per Capita in CA (2012 vs 2017)”, x = “Year”, y = “Average Investment per Capita ($)” ) + theme_minimal()</p>
 <p>ggplot(mdwd_transformed, aes(x = factor(YEAR), y = investment_per_capita, fill = factor(YEAR))) + geom_boxplot() + labs( title = “Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)”, subtitle = “Comparing the range and median of investment per capita in CA cities”, x = “Year”, y = “Investment per Capita ($)” ) + theme_minimal() + theme(legend.position = “none”)</p>
@@ -268,6 +290,9 @@ Note
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-mdwd_data" class="csl-entry" role="listitem">
+Hughes, Sara, Christine Kirchhoff, Katelynn Conedera, and Mirit Friedman. 2023. <span>“The Municipal Drinking Water Database, 2000-2018 [United States].”</span> Harvard Dataverse. <a href="https://doi.org/10.7910/DVN/DFB6NG">https://doi.org/10.7910/DVN/DFB6NG</a>.
+</div>
 <div id="ref-jimenez2009" class="csl-entry" role="listitem">
 Jimenez, B. S. 2009. <span>“Fiscal Stress and the Allocation of Expenditure Responsibilities Between State and Local Governments: An Exploratory Study.”</span> <em>State and Local Government Review</em> 41 (2): 81–94. <a href="https://doi.org/10.1177/0160323X0904100202">https://doi.org/10.1177/0160323X0904100202</a>.
 </div>

@@ -47,5 +47,33 @@
     "title": "Command Line Exercises",
     "section": "",
     "text": "#1, Use wget to download the students.csv file locally from here. system(“wget https://github.com/stephaniehicks/jhustatprogramming2024/raw/main/projects/01-project/students.csv”) sh: wget: command not found Warning message: In system(“wget https://github.com/stephaniehicks/jhustatprogramming2024/raw/main/projects/01-project/students.csv”) : error in running command students &lt;- read.csv(“students.csv”)\n\n\n#2, Display the contents of the students.csv file using the cat command. cat(readLines(“students.csv”), sep = “”) ID,Name,Age,Gender,Grade,Subject 1,Alice,20,F,88,Mathematics 2,Bob,22,M,76,History 3,Charlie,23,M,90,Mathematics 4,Diana,21,F,85,Science 5,Eve,20,F,92,Mathematics 6,Frank,22,M,72,History 7,Grace,23,F,78,Science 8,Heidi,21,F,88,Mathematics 9,Ivan,20,M,85,Science 10,Judy,22,F,79,History Warning message: In readLines(“students.csv”) : incomplete final line found on ‘students.csv’\n\n\n#3, Display only the first 5 lines of the file using head to show the first few lines. head(students, 5) ID Name Age Gender Grade Subject 1 1 Alice 20 F 88 Mathematics 2 2 Bob 22 M 76 History 3 3 Charlie 23 M 90 Mathematics 4 4 Diana 21 F 85 Science 5 5 Eve 20 F 92 Mathematics\n\n\n#4, Display only the last 3 lines of the file using tail to show the last few lines. tail(students, 3) ID Name Age Gender Grade Subject 8 8 Heidi 21 F 88 Mathematics 9 9 Ivan 20 M 85 Science 10 10 Judy 22 F 79 History\n\n\n#5, Count the number of lines in the file using the wc command to count the lines. system(“wc -l students.csv”) 10 students.csv\n\n\n#6， Find all students who are taking “Math” as a subject using grep to filter lines with the subject “Math”. system(“grep ‘Math’ students.csv”) 1,Alice,20,F,88,Mathematics 3,Charlie,23,M,90,Mathematics 5,Eve,20,F,92,Mathematics 8,Heidi,21,F,88,Mathematics\n\n\n#7， Find all female students using grep or awk to filter based on gender. system(“grep ‘,F,’ students.csv”) 1,Alice,20,F,88,Mathematics 4,Diana,21,F,85,Science 5,Eve,20,F,92,Mathematics 7,Grace,23,F,78,Science 8,Heidi,21,F,88,Mathematics 10,Judy,22,F,79,History\n\n\n#8， Sort the file by the students’ ages in ascending order. Use sort to order by the “Age” column. system(“sort -t, -k3,3n students.csv”) ID,Name,Age,Gender,Grade,Subject 1,Alice,20,F,88,Mathematics 5,Eve,20,F,92,Mathematics 9,Ivan,20,M,85,Science 4,Diana,21,F,85,Science 8,Heidi,21,F,88,Mathematics 10,Judy,22,F,79,History 2,Bob,22,M,76,History 6,Frank,22,M,72,History 3,Charlie,23,M,90,Mathematics 7,Grace,23,F,78,Science\n\n\n#9， Find the unique subjects listed in the file. Use cut, sort, and uniq to extract unique subjects. system(“cut -d, -f6 students.csv | sort | uniq”) History Mathematics Science Subject\n\n\n#10， Calculate the average grade of the students. Use awk to sum the grades and divide by the number of students. system(“awk -F, ‘{sum+=$5} END {print sum/NR}’ students.csv”) 75.7273\n\n\n#11， Replace all occurrences of “Math” with “Mathematics” in the file. Use sed to perform the replacement. system(“sed -i ’’ ‘s/Math/Mathematics/g’ students.csv”) students = read.csv(“students.csv”) print(students) ID Name Age Gender Grade Subject 1 1 Alice 20 F 88 Mathematicsematics 2 2 Bob 22 M 76 History 3 3 Charlie 23 M 90 Mathematicsematics 4 4 Diana 21 F 85 Science 5 5 Eve 20 F 92 Mathematicsematics 6 6 Frank 22 M 72 History 7 7 Grace 23 F 78 Science 8 8 Heidi 21 F 88 Mathematicsematics 9 9 Ivan 20 M 85 Science 10 10 Judy 22 F 79 History"
+  },
+  {
+    "objectID": "example-analysis.html",
+    "href": "example-analysis.html",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "In California, how has per capita investment in drinking water systems changed over time, and how does it relate to city population size?"
+  },
+  {
+    "objectID": "example-analysis.html#graph-1-average-water-utility-investment-per-capita-in-ca-2012-vs-2017",
+    "href": "example-analysis.html#graph-1-average-water-utility-investment-per-capita-in-ca-2012-vs-2017",
+    "title": "Example Analysis",
+    "section": "Graph 1: Average Water Utility Investment per Capita in CA (2012 vs 2017)",
+    "text": "Graph 1: Average Water Utility Investment per Capita in CA (2012 vs 2017)\n\n\n\nGraph 1: Average Water Utility Investment per Capita in CA (2012 vs 2017)"
+  },
+  {
+    "objectID": "example-analysis.html#graph-2-distribution-of-per-capita-water-utility-investment-in-california-2012-vs-2017",
+    "href": "example-analysis.html#graph-2-distribution-of-per-capita-water-utility-investment-in-california-2012-vs-2017",
+    "title": "Example Analysis",
+    "section": "Graph 2: Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)",
+    "text": "Graph 2: Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)\n\n\n\nGraph 2: Distribution of Per Capita Water Utility Investment in California (2012 vs 2017)"
+  },
+  {
+    "objectID": "example-analysis.html#graph-3-relationship-in-population-and-per-capita-investment-in-ca-2012-vs-2017",
+    "href": "example-analysis.html#graph-3-relationship-in-population-and-per-capita-investment-in-ca-2012-vs-2017",
+    "title": "Example Analysis",
+    "section": "Graph 3: Relationship in Population and Per Capita Investment in CA (2012 vs 2017)",
+    "text": "Graph 3: Relationship in Population and Per Capita Investment in CA (2012 vs 2017)\n\n\n\nGraph 3: Relationship in Population and Per Capita Investment in CA (2012 vs 2017)"
   }
 ]
